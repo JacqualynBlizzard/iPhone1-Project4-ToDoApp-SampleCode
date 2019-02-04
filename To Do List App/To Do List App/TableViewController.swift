@@ -47,19 +47,17 @@ class TableViewController: UITableViewController {
     // MARK: - Table view data source
     // Part 6 Step 1
     override func numberOfSections(in tableView: UITableView) -> Int {
-        // #warning Incomplete implementation, return the number of sections
         return 1
     }
     
     // Part 6 Step 2
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        // #warning Incomplete implementation, return the number of rows
         return tasks.count
     }
 
     // Part 6 Step 3
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "myCell", for: indexPath) as UITableViewCell
+        let cell = myTableView.dequeueReusableCell(withIdentifier: "myCell", for: indexPath) as UITableViewCell
         cell.textLabel?.text = tasks[indexPath.row].taskName
         return cell
     }
